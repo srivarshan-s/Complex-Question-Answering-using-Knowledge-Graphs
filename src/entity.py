@@ -60,6 +60,10 @@ def get_relation(sent):
   matches = matcher(doc)
   k = len(matches) - 1
 
-  span = doc[matches[k][1]:matches[k][2]] 
+  if k == -1:
+    return " "
+
+  else:
+    span = doc[matches[k][1]:matches[k][2]] 
 
   return(span.text)
