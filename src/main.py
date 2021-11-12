@@ -32,3 +32,4 @@ for i in tqdm(candidate_sentences["sentence"]):
   entity_pairs.append(get_entities(i))
 
 print(entity_pairs[0:10])
+print(get_relation("John completed the task"))
