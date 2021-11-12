@@ -43,4 +43,3 @@ def get_entities(sent):
 
   return [ent1.strip(), ent2.strip()]
 
-

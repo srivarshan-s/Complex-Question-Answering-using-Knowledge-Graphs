@@ -11,4 +11,3 @@ doc = nlp("Nagal won the first set.")
 for tok in doc:
     print(tok.text, "...", tok.dep_)
 
-

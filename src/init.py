@@ -22,3 +22,4 @@ from tqdm import tqdm
 # Set root project path
 
 ROOT_PATH = '/run/media/sri/OS/Users/sriva/Desktop/Sem 5/Knowledge Representation/Project/knowledge-graph/'
+

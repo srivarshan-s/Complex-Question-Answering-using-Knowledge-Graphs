@@ -23,7 +23,3 @@ for tok in doc:
 
 print(get_entities(text))
 
-
-
-
-
