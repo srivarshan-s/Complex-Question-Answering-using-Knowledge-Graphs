@@ -18,3 +18,6 @@ import matplotlib.pyplot as plt
 
 from tqdm import tqdm
 
+ROOT_PATH = '/run/media/sri/OS/Users/sriva/Desktop/Sem 5/'
+ROOT_PATH += 'Knowledge Representation/Project/'
+ROOT_PATH += 'Complex-Question-Answering-using-Knowledge-Graphs/'
