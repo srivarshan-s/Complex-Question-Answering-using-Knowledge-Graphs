@@ -55,7 +55,7 @@ def get_relation(sent):
             {'DEP':'agent','OP':"?"},  
             {'POS':'ADJ','OP':"?"}] 
 
-  matcher.add("matching_1", None, pattern) 
+  matcher.add("matching_1", [pattern]) 
 
   matches = matcher(doc)
   k = len(matches) - 1
