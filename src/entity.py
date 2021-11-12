@@ -1,4 +1,4 @@
-from init import nlp
+from init import nlp, Matcher
 
 
 def get_entities(sent):
@@ -43,3 +43,23 @@ def get_entities(sent):
 
   return [ent1.strip(), ent2.strip()]
 
+
+def get_relation(sent):
+
+  doc = nlp(sent)
+
+  matcher = Matcher(nlp.vocab)
+
+  pattern = [{'DEP':'ROOT'}, 
+            {'DEP':'prep','OP':"?"},
+            {'DEP':'agent','OP':"?"},  
+            {'POS':'ADJ','OP':"?"}] 
+
+  matcher.add("matching_1", None, pattern) 
+
+  matches = matcher(doc)
+  k = len(matches) - 1
+
+  span = doc[matches[k][1]:matches[k][2]] 
+
+  return(span.text)
