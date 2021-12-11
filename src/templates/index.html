@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QnA using KG</title>
+  <link rel="stylesheet" href="../static/styles/bootstrap/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="../static/styles/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/main.css">
+</head>
+
+<body>
+  <div class="nav">
+    <p id="mainTitle">Question Answering using Knowledge Graph</p>
+  </div>
+  <hr>
+  <div class="mainclass">
+    <form action="{{ url_for('submit') }}" method="post" role="form" id="myForm">
+      <div class="row">
+        <div class="col-md-7" id="leftQues">
+          <div class="row">
+            <div class="col-md-2">
+              <h2><span class="label">Paragraph</span></h2>
+            </div>
+          </div>
+          <br>
+          <textarea placeholder="Write data here" style="resize:none" class="form-control" name="paragraph"
+            id="paragraph" rows="3">{{ input_paragraph }}</textarea>
+          <br>
+          <div class="row">
+            <div class="col-md-2">
+              <h2><span class="label">Question</span></h2>
+            </div>
+          </div>
+          <br>
+          <textarea placeholder="Write question here" style="resize:none" class="form-control" name="question"
+            id="question" rows="1">{{ input_question }}</textarea>
+
+          <br>
+          <input id="btnSubmit" type="submit" name="submit" value="SUBMIT" class="btn btn-sm">
+          <a href="{{ url_for('clear') }}"><button id="btnClear" type="button" name="clear"
+              class="btn btn-sm">CLEAR</button></a>
+        </div>
+
+        <div class="col-md-5" id="rightAns">
+          <div id="answer" class="row">
+            <h2><span class="label">Answer</span></h2>
+            <br>
+            <div class="ourP">
+              <h3>Answer</h3>
+              <textarea placeholder="Predicted Answer" style="resize:none" class="form-control" id="answer1"
+                rows="1" readonly>{{ my_answer }}</textarea>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <br>
+  <script type="text/javascript">
+    document.getElementById("myForm").reset();
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../static/jquery-3.1.0.min.js"></script>
+  <script src="../static/jszip.min.js"></script>
+</body>
+
+</html>
